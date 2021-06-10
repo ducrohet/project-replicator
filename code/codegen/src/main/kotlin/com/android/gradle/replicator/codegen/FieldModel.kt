@@ -19,15 +19,15 @@ package com.android.gradle.replicator.codegen
 import kotlin.reflect.KClass
 
 data class FieldModel(
-    val name: String,
-    override val type: KClass<*>,
-    override val nullable: Boolean,
-    val modifiers: Int = 0
+        val name: String,
+        override val classModel: ClassModel<*>,
+        override val nullable: Boolean,
+        val modifiers: Int = 0
 ): TypeModel
 
 typealias ParamModel= FieldModel
 
 data class TypeModelImpl(
-    override val type: KClass<*>,
-    override val nullable: Boolean
+        override val classModel: ClassModel<*>,
+        override val nullable: Boolean
 ): TypeModel
